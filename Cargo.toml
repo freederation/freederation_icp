@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/freederation_nostr_backend"
+]
+resolver = "2"

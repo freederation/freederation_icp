@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "freederation_nostr_backend": {
+      "candid": "src/freederation_nostr_backend/freederation_nostr_backend.did",
+      "package": "freederation_nostr_backend",
+      "type": "rust"
+    },
+    "freederation_nostr_frontend": {
+      "dependencies": [
+        "freederation_nostr_backend"
+      ],
+      "source": [
+        "src/freederation_nostr_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "freederation_nostr_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

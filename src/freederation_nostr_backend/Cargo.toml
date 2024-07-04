@@ -1,0 +1,33 @@
+[package]
+name = "freederation_nostr_backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+bech32 = "0.11.0"
+candid = "0.10"
+# const-default = "1.0.0"
+generic-array = {version="1.0.0", features=["const-default","serde", "zeroize"]}
+getrandom = { version = "0.2.15", features = ["custom"] }
+hereditary = "0.1.0"
+hex-conservative = {version="0.2.1", features=["serde"]}
+ic-cdk = "0.13"
+ic-cdk-timers = "0.7" # Feel free to remove this dependency if you don't need timers
+k256 = { git = "https://github.com/altkdf/elliptic-curves", branch = "schnorr_canister", features = ["schnorr"] }
+rand_chacha = "0.3.1"
+rand_core = "0.6.4"
+serde = { version = "1.0.203", default-features = false, features = ["derive"] }
+serde_json = "1.0.117"
+thiserror = "1.0.61"
+trait-set = "0.3.0"
+typenum = "1.17.0"
+url = {version="2.5.2",default-features = false, features = ["serde"] }
+
+[features]
+default=["std"]
+std=[]

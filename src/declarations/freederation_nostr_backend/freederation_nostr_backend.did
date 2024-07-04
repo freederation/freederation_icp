@@ -1,0 +1,9 @@
+type SIGNATURE_INFO = record { verifying_key : text; signature_str : text };
+service : {
+  generate_key : () -> (text) query;
+  greet : (text) -> (text) query;
+  rng_seed : () -> (text) query;
+  schnorr_signature : (text, text) -> (SIGNATURE_INFO) query;
+  update_rng_seed : (text) -> ();
+  validate_schnorr : (text, text, text) -> (bool) query;
+}
